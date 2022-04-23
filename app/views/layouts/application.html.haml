@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Outdoorsy
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+  %body
+    - flash.each do |type, message|
+      .alert{class: "alert-#{type}"}
+        = message
+    = yield
