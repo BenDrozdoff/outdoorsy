@@ -1,23 +1,30 @@
-%h1 Outdoor.sy
+.navbar.mb-1.navbar-dark.bg-dark
+  = link_to "Outdoor.sy", root_path, class: "navbar-brand mx-5"
 
-%h3 Customers
+.container.pt-2
+  %h3 Customers
 
-%table
-  %tr
-    %th
-      = render partial: "sortable_header", locals: { column_name: :full_name }
-    %th
-      Email
-    %th
-      = render partial: "sortable_header", locals: { column_name: :vehicle_type }
-    %th
-      Vehicle Name
-    %th
-      Vehicle Length (ft)
-  = render partial: "customer", collection: @sorted_customers.customers
+  %table.table.table-striped
+    %tr
+      %th
+        = render partial: "sortable_header", locals: { column_name: :full_name }
+      %th
+        Email
+      %th
+        = render partial: "sortable_header", locals: { column_name: :vehicle_type }
+      %th
+        Vehicle Name
+      %th
+        Vehicle Length (ft)
+    = render partial: "customer", collection: @sorted_customers.customers
 
-%h3 Import
+  %h3 Import
 
-= form_with(url: customer_imports_path, method: :post) do |f|
-  = f.file_field :file
-  = f.submit "Import Customers"
+  = form_with(url: customer_imports_path, method: :post) do |f|
+    .row.mb-4
+      .col-auto
+        = f.label :file, class: 'col-form-label'
+      .col-auto
+        = f.file_field :file, class: "form-control"
+      .col-auto
+        = f.submit "Import Customers", class: "btn btn-primary"
