@@ -7,6 +7,7 @@
 5. Install dependencies `bundle install`
 6. Start the server `rails s`
 7. Visit the site in your [browser](http://localhost:3000)
+8. (Optional) run tests with `rspec`
 
 ## Desired features
 
