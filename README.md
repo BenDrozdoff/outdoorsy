@@ -1,13 +1,17 @@
-# README
+# Outdoor.sy
 ## Setup
 1. Install ruby v3. I'd recommend [rbenv](https://github.com/rbenv/rbenv)
-2. Install bundler `gem install bundler`
-3. Install postgresql `brew install postgresql`
-4. Start postgres `brew services start postgresql`
-5. Install dependencies `bundle install`
-6. Start the server `rails s`
-7. Visit the site in your [browser](http://localhost:3000)
-8. (Optional) run tests with `rspec`
+2. Install node v16. I'd recommend using [nvm](https://github.com/nvm-sh/nvm)
+3. Install bundler `gem install bundler`
+4. Install yarn `npm install --global yarn`
+5. Install postgresql `brew install postgresql`
+6. Start postgres `brew services start postgresql`
+7. Run `bin/setup` to set up the application and start the server at port 3000, or continue with steps 8-12 to do each component on its own
+8. Install dependencies `bundle install`
+9. Setup the database `rake db:prepare`
+10. Start the server on port 3000 `rails s`
+11. Visit the site in your [browser](http://localhost:3000) at http://localhost:3000
+12. (Optional) run tests with `rspec`
 
 ## Desired features
 
